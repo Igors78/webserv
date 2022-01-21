@@ -6,32 +6,24 @@
 #    By: mbarut <mbarut@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/21 15:55:20 by mbarut            #+#    #+#              #
-#    Updated: 2022/01/20 21:21:49 by mbarut           ###   ########.fr        #
+#    Updated: 2022/01/21 17:38:11 by mbarut           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=webserv
 
-DRIVER=driver/main.cpp
+SERVER=server.cpp
 
-SRC=main.cpp
+SRC=ft_memset.cpp
 
 CC=clang++
 
-CFLAGS_11= -Wall -Werror -Wextra -std=c++11 -g -o
-
-CFLAGS_98= -Wall -Werror -Wextra -std=c++98 -g -o
+CFLAGS= -Wall -Werror -Wextra -std=c++98 -g -o
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(SRC) $(CFLAGS_98) $(NAME)
-
-c11:
-	$(CC) $(SRC) $(CFLAGS_11) $(NAME)
-
-c98:
-	$(CC) $(SRC) $(CFLAGS_98) $(NAME)
+	$(CC) $(SERVER) $(SRC) $(CFLAGS) $(NAME)
 
 clean:
 	@rm -rf ./*.o ./webserv.dSYM
